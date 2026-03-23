@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lighting Solutions</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0f0f0f;
+    color: white;
+}
+
+/* NAVBAR */
+nav {
+    position: sticky;
+    top: 0;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    z-index: 1000;
+}
+
+nav h2 {
+    color: #ffd700;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background: #ffd700;
+    color: black;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+}
+
+/* SECTION */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+/* PRODUCTS */
+.filter-btns button {
+    margin: 5px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ABOUT */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* CONTACT */
+input, textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    padding: 20px;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>ON MAGIC</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <h1>High-Quality Street & flood Lighting Solutions</h1>
+    <p>We manufacture bulk street lights and event lighting with reliable quality and affordable pricing.</p>
+    <button class="btn" onclick="scrollToSection('products')">View Products</button>
+    <button class="btn" onclick="scrollToSection('contact')">Contact Us</button>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+    <h2>Our Products</h2>
+
+    <div class="filter-btns">
+        <button class="btn" onclick="filterProducts('all')">All</button>
+        <button class="btn" onclick="filterProducts('street')">Street Lights</button>
+        <button class="btn" onclick="filterProducts('function')">Flood Lights</button>
+    </div>
+
+    <div class="products">
+
+        <!-- Street -->
+        <div class="card fade street">
+            <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da">
+            <h3>LED Street Light</h3>
+            <p>Energy-efficient LED lighting for roads.</p>
+            <button class="btn" onclick="buy('LED Street Light')">Buy Now</button>
+        </div>
+
+        <div class="card fade street">
+            <img src="https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62">
+            <h3>Solar Street Light</h3>
+            <p>Eco-friendly solar-powered lighting.</p>
+            <button class="btn" onclick="buy('Solar Street Light')">Buy Now</button>
+        </div>
+
+        <!-- Function -->
+        <div class="card fade function">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063">
+            <h3>Decorative Lights</h3>
+            <p>Perfect for weddings and events.</p>
+            <button class="btn" onclick="buy('Decorative Lights')">Buy Now</button>
+        </div>
+
+        <div class="card fade function">
+            <img src="https://images.unsplash.com/photo-1508615070457-7baeba4003ab">
+            <h3>Flood Lights</h3>
+            <p>High brightness for large areas.</p>
+            <button class="btn" onclick="buy('Flood Lights')">Buy Now</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>We are a trusted bulk lighting supplier delivering high-quality products for street and event lighting needs.</p>
+
+    <div class="stats">
+        <div>
+            <h3>10+</h3>
+            <p>Years Experience</p>
+        </div>
+        <div>
+            <h3>500+</h3>
+            <p>Clients</p>
+        </div>
+        <div>
+            <h3>1000+</h3>
+            <p>Projects</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: +91 93278 02068</p>
+
+    <button class="btn" onclick="buy('General Inquiry')">Chat on WhatsApp</button>
+
+    <form onsubmit="sendMessage(event)">
+        <input type="text" placeholder="Your Name" required><br>
+        <textarea placeholder="Your Message" required></textarea><br>
+        <button class="btn">Send</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 ON MAGIC. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// SCROLL
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+// WHATSAPP
+function buy(product) {
+    let msg = encodeURIComponent("Hello, I want to buy " + product);
+    window.open("https://wa.me/919327802068?text=" + msg, "_blank");
+}
+
+// FILTER
+function filterProducts(type) {
+    let items = document.querySelectorAll('.card');
+
+    items.forEach(item => {
+        if (type === 'all') {
+            item.style.display = 'block';
+        } else {
+            item.style.display = item.classList.contains(type) ? 'block' : 'none';
+        }
+    });
+}
+
+// ANIMATION
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".fade").forEach(el => {
+        let top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 50) {
+            el.classList.add("show");
+        }
+    });
+});
+
+// FORM
+function sendMessage(e) {
+    e.preventDefault();
+    alert("Message sent! We will contact you soon.");
+}
+
+</script>
+
+</body>
+</html>
